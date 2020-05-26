@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import Loader from './components/Loader'
+import Scene from './components/Scene'
+import BottomBar from './components/BottomBar'
+import FeaturedText from './components/FeaturedText'
+import PageRenderer from './components/PageRenderer'
 import './App.css';
 
-function App() {
-  return (
+class App extends React.Component {
+  state = {
+    tab: "home",
+    playFeaturedText: true
+  }
+  clcked = (tab) => {
+    this.setState({ tab, playFeaturedText: false }, () => {      
+      this.Scene.tabClicked(tab);
+      this.PageRenderer.tabClicked(tab);
+    })
+  }
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Loader />
+      <PageRenderer ref={PageRenderer => this.PageRenderer = PageRenderer} tab={this.state.tab}/>  
+      <Scene ref={Scene => this.Scene = Scene}/>
+      <FeaturedText play={this.state.playFeaturedText}/>
+      <BottomBar clicked={this.clcked} />
     </div>
   );
+  }
 }
 
 export default App;

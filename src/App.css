@@ -1,38 +1,127 @@
-.App {
-  text-align: center;
+.navLinks:hover {
+    color: #08fdd8;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* FeaturedText */
+.m-text-1,
+.m-text-2,
+.m-text-3 {
+    white-space: nowrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.m-page-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.m-page {
+    position: absolute;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 96vw;
+    height: 90vh;
+    transform: translate(-50%, 0);
+    padding: 4px;
+    top: 2vh;
+    z-index: 120;
 }
 
-.App-link {
-  color: #61dafb;
+skill {
+    display: block;
+    border: 2px dashed white;
+    padding: 18px 8px 12px 8px;
+    margin: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.m-head {
+    font-size: 42px;
+    text-align: center;
+}
+
+.m-subhead {
+    text-align: center;
+}
+
+.m-skills .cont {
+    margin: 0px 5px 0 5px;
+    display: inline-block;
+    width: 100%;
+}
+
+.border {
+    background-color: rgba(124, 175, 184, 0.1);
+    /* border: 2px dashed white; */
+    padding: 2px;
+    /* margin: 4px; */
+}
+
+/* Projects Css */
+.p-project-board {
+    height: 60vh;
+}
+
+.p-project-board .p-head {
+    color: #212121;
+    margin-right: 8px;
+    font-size: 20px;
+    display: inline-block;
+}
+
+.p-project-card {
+    padding: 8px;
+    margin: 0 6px 18px 8px;
+}
+
+.i-b {
+    display: inline-block;
+}
+
+.g-subhead {
+    padding: 4px 8px 4px 8px;
+    margin-bottom: 18px;
+    font-size: 28px;
+    color: white;
+    border-bottom: 2px solid #212121;
+    display: inline-block;
+    text-align: center;
+}
+
+.underlined {
+    margin-right: 6px;
+    border-bottom: 2px solid #212121;
+    display: inline-block;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: white;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+@media only screen and (max-width: 600px) {
+    .m-page {
+        height: 85vh;
+    }
+    #project-board{
+        display: none;
+    }
 }

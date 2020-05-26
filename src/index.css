@@ -5,9 +5,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  /* cursor: none; */
+  background-color: #090909;
+  transition: background-color 0.5s linear;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+img[src="https://cdn.000webhost.com/000webhost/logo/footer-powered-by-000webhost-white2.png"] {
+  display: none;
+  height: 0;
+  opacity: 0;
 }
