@@ -10,21 +10,24 @@ import './App.css';
 class App extends React.Component {
   state = {
     tab: "home",
-    playFeaturedText: true
+    isMobile: true,
+    playFeaturedText: false
   }
   clcked = (tab) => {
-    this.setState({ tab, playFeaturedText: false }, () => {      
-      this.Scene.tabClicked(tab);
+    this.setState({ tab, playFeaturedText: false }, () => {     
+      // if(!this.state.isMobile)
+        this.Scene.tabClicked(tab);
       this.PageRenderer.tabClicked(tab);
+      this.FeaturedText.tabClicked(tab);
     })
   }
   render() {
     return (
     <div className="App">
-      <Loader />
+      <Loader isMobile={!this.state.isMobile}/>
       <PageRenderer ref={PageRenderer => this.PageRenderer = PageRenderer} tab={this.state.tab}/>  
-      <Scene ref={Scene => this.Scene = Scene}/>
-      <FeaturedText play={this.state.playFeaturedText}/>
+      <Scene ref={Scene => this.Scene = Scene} isMobile={this.state.isMobile}/>
+      <FeaturedText play={this.state.isMobile} ref={FeaturedText => this.FeaturedText = FeaturedText} tab={this.state.tab}/>
       <BottomBar clicked={this.clcked} />
     </div>
   );

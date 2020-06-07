@@ -1,12 +1,39 @@
 import React from 'react';
 import FeaturedTextTimeline from './gsap/FeaturedTextTimeline'
+import gsap from 'gsap'
 
 class FeaturedText extends React.Component{
     constructor(props) {
         super(props)
+        // this.featuredTextTimeline = new FeaturedTextTimeline();
+    }
+    state = {
+        page: 'home'
+    }
+    tabClicked(tab) {
+        if (tab != "home")
+           gsap.to(".m-text-3", { opacity: 0, duration: 0.3, x: 50, delay: 0 });
+        this.setState({page: tab})
+        switch (tab) {
+        case 'home':
+            gsap.fromTo(".m-text-3", { opacity: 0, duration: 0, x: -50, delay: 0 }, { opacity: 1, duration: 0.3, x: 0, delay: 0.5 }); 
+            break;
+        case 'skills':
+            this.featuredTextTimeline.end()
+            break;
+        case 'projects':
+            this.featuredTextTimeline.end()
+            break;
+        case 'get_in_touch':
+            this.featuredTextTimeline.end()
+            break;
+        default:
+            break;
+        }
     }
     componentDidMount() {
-        if (this.props.play) new FeaturedTextTimeline().play();
+        this.featuredTextTimeline = new FeaturedTextTimeline();
+        if (this.props.play) this.featuredTextTimeline.play();
     }
     render() {
         const featuredTextStyling = {

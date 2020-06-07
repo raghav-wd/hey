@@ -27,8 +27,10 @@ setProjectBoard(title, platform, programmedIn, description, grabbed) {
 
 toggle() {
     // alert(this.projectList.offsetHeight +", "+ closeBtn.offsetHeight)
-    gsap.to(this.projectBoard, { x: 100, opacity: 0 })
-    gsap.to(this.projectList, 0.5, { opacity: 1, y: -(this.projectBoard.offsetHeight) })
+    if (window.innerWidth < 600) {
+        gsap.to(this.projectBoard, { x: 100, opacity: 0 })
+        gsap.to(this.projectList, 0.5, { opacity: 1, y: -(this.projectBoard.offsetHeight) })
+    }
 }
 
 componentDidMount() {
@@ -48,7 +50,7 @@ componentDidMount() {
             let description = this.querySelector("#data-description").innerHTML;
             let grabbed = this.querySelector("#data-grabbed").innerHTML;
 
-            if (true) {
+            if (window.innerWidth < 600) {
                 gsap.fromTo(projectBoard, 0.5, { x: 100 }, { x: 0, opacity: 1, display: "block" })
                 gsap.to(projectList, 0, { y:projectBoard.offsetHeight, opacity: 0 })
             }
@@ -64,7 +66,7 @@ render() {
                 <div className="m-head white-text">Projects</div>
                 <div className="row">
                     <div id="project-board" className="col l8 s12 p-project-board border left-align">
-                        <i class = "material-icons right small hide-on-med-and-up" id="close-btn" onClick={()=>this.toggle()}>close</i>
+                        <i className="material-icons right small hide-on-med-and-up" id="close-btn" onClick={()=>this.toggle()}>close</i>
                         <div><div className="p-head">Project: </div><h5 className="i-b" className="i-b" id="p-title">MusicPlayer</h5></div>
                         <div><div className="p-head">Development Platform: </div><div className="i-b" id="p-platform">Android Studio</div></div>
                         <div><div className="p-head">Programed in: </div><div className="i-b" id="p-programmedIn">Java, PHP, MySQL, SQLite</div></div>
@@ -91,10 +93,10 @@ render() {
                         </div>
                         <div className="p-project-card border left-align">
                             <div className="p-project-card-head">#<span id="data-title">TheRaghavGupta.com</span></div>
-                            <span id="data-platform" className="hide">Visual Studio & Three.js</span>
-                            <span id="data-programmedIn" className="hide">JavaScript</span>
+                            <span id="data-platform" className="hide">Visual Studio</span>
+                            <span id="data-programmedIn" className="hide">React Js & Three.js</span>
                             <div className="divider"></div>
-                            <div className="p-project-card-info"><span id="data-description">This site too is a work of art by me.</span></div>
+                            <div className="p-project-card-info"><span id="data-description">Outlook of the portAt first I decided to make the my website on Vanilla js </span></div>
                             <span id="data-grabbed" className="hide">Three.js, ES6 and Gsap</span>
                         </div>
                         <div className="p-project-card border left-align">

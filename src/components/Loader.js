@@ -3,6 +3,7 @@ import '../css/loader.css'
 
 class Loader extends React.Component {
     render() {
+        if(this.props.isMobile)
         return (
             <div className="loader">
             <div className="container">
@@ -19,6 +20,7 @@ class Loader extends React.Component {
             </div>
         </div>
         )
+        else return <React.Fragment/>
     }
 }
 
