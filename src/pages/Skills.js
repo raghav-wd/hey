@@ -18,7 +18,7 @@ render() {
                         <div className="row">
                             <div className="col l3 s6 spaceit">
                                 <div className="cont">
-                                    <div className="m-subhead">Code in</div>
+                                    <div className="m-subhead">Codes in</div>
                                     <skill>HTML & CSS</skill>
                                     <skill>Javascript</skill>
                                     <skill>Android</skill>
@@ -27,12 +27,18 @@ render() {
                                     <skill>Java</skill>
                                     <skill>C/C++</skill>
                                 </div>
+                                <br /><br />
+                                <div className="cont">
+                                    <div className="m-subhead">Libraries</div>
+                                    <skill>React.js</skill>
+                                    <skill>Three.js</skill>
+                                    <skill>Gsap</skill>
+                                </div>
                             </div>
                             <div className="col l3 s6">
                                 <div className="cont">
                                     <div className="m-subhead">Framework</div>
-                                    <skill>Three.js</skill>
-                                    <skill>Gsap</skill>
+                                    <skill>Bootstrap</skill>
                                     <skill>Materialize</skill>
                                 </div>
                                 <br /><br />
@@ -46,13 +52,13 @@ render() {
                             </div>
                             <div className="col l3 s6">
                                 <div className="cont">
-                                    <div className="m-subhead">IDE/Softwares</div>
+                                    <div className="m-subhead">IDE/ Softwares</div>
                                     <skill>Android Studio</skill>
                                     <skill>Blender</skill>
                                     <skill>VSCode</skill>
                                     <skill>Audition</skill>
-                                    <skill>PremierPro/AfterEffect</skill>
-                                    <skill>PhotoShop/Illustrator</skill>
+                                    <skill>PremierPro/ AfterEffect</skill>
+                                    <skill>PhotoShop/ Illustrator</skill>
                                 </div>
                             </div>
                             <div className="col l3 s6">
