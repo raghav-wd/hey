@@ -21,6 +21,9 @@ class App extends React.Component {
       this.FeaturedText.tabClicked(tab);
     })
   }
+  componentDidMount() {
+    document.title = "Hey! | Raghav Gupta Portfolio"
+  }
   render() {
     return (
     <div className="App">

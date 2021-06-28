@@ -13,7 +13,7 @@ class GetInTouch extends React.Component {
                                 <div className="center-container center-align">
                                     <div className="g-subbody black-text left-align i-b">
                                     <div><div className="underlined">Github:</div><div className="black-text text-darken-2 i-b">github.com/raghav-wd</div></div>
-                                    <div><div className="underlined">LinkedIn:</div><div className="black-text text-darken-2 i-b"></div></div>
+                                    <div><div className="underlined">LinkedIn:</div><div className="black-text text-darken-2 i-b">https://www.linkedin.com/in/devansh-gupta-914a0716b/</div></div>
                                     <div><div className="underlined">Instagram:</div><div className="black-text text-darken-2 i-b"></div> r.a.g.h.a._v</div>
                                 </div>
                                 </div>
